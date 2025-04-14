@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  pre-commit:
+    name: Static Code Checks
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.x"
+        cache: 'pip'
+    - uses: pre-commit/action@v3.0.0
