@@ -1,0 +1,30 @@
+[build-system]
+requires = ["pixi", "setuptools"]
+
+[project]
+name = "bluesky_nexus"
+version = "0.1.0"
+description = "Writer of NeXus metadata into Bluesky stream"
+requires-python = ">=3.11,<3.12"
+dependencies = ["jupyter", "ipython"]
+authors = [
+    { name = "BNL NSLS-II", email = "ymatviych@bnl.gov" },
+]
+license = { file = "LICENSE" }
+
+[tool.pixi.project]
+platforms = ["linux-64", "osx-64"]
+channels = ["conda-forge"]
+
+[tool.pixi.tasks]
+clone = "git clone https://github.com/nexusformat/definitions.git ./definitions"
+
+[tool.pixi.dependencies]
+yaml = ">=0.2.5,<0.3"
+numpy = ">=2.2.3,<3"
+nexusformat = ">=1.0.7,<2"
+jupytext = ">=1.17.0,<2"
+
+[tool.pixi.pypi-dependencies]
+nyaml = ">=0.2.1, <0.3"
+bluesky_nexus = {path = ".", editable = true}

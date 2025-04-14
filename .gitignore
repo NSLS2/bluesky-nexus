@@ -75,8 +75,9 @@ docs/_build/
 .pybuilder/
 target/
 
-# Jupyter Notebook
+# Jupyter Notebooks
 .ipynb_checkpoints
+notebooks/*.ipynb
 
 # IPython
 profile_default/
@@ -169,3 +170,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+# pixi environments
+.pixi
+*.egg-info
+
+# The original xml and converted yml definitions
+definitions*/
+converted_yml/
