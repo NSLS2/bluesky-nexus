@@ -18,6 +18,7 @@ channels = ["conda-forge"]
 
 [tool.pixi.tasks]
 clone = "git clone https://github.com/nexusformat/definitions.git ./definitions"
+sync = "jupytext --set-formats py,ipynb ./notebooks/*"
 
 [tool.pixi.dependencies]
 yaml = ">=0.2.5,<0.3"
