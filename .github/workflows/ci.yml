@@ -1,4 +1,6 @@
 name: CI
+permissions:
+  contents: read
 
 on:
   pull_request:
@@ -10,8 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        persist-credentials: false
     - uses: actions/setup-python@v4
       with:
         python-version: "3.x"
         cache: 'pip'
-    - uses: pre-commit/action@v3.0.0
+    - uses: pre-commit/action@646c83fcd040023954eafda54b4db0192ce70507 # v3.0.0
